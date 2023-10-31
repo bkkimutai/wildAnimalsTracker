@@ -92,4 +92,23 @@ public class Sightings implements DBManagement {
                     .executeAndFetch(Sightings.class);
         }
     }
+    public static Sightings find(int sightingId) {
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "SELECT * FROM sightings where sightingId = :sightingId";
+            return con.createQuery(sql)
+                    .addParameter("sightingId", sightingId)
+                    .executeAndFetchFirst(Sightings.class);
+        }
+    }
+    public void update() {
+        String sql = "UPDATE sightings SET location = :location, rangerId = :rangerId WHERE sightingId = :sightingId";
+        try(Connection con = DB.sql2o.open()) {
+            con.createQuery(sql)
+                    .addParameter("location", location)
+                    .addParameter("rangerId", rangerId)
+                    .addParameter("sightingId", sightingId)
+                    .throwOnMappingFailure(false)
+                    .executeUpdate();
+        }
+    }
 }
