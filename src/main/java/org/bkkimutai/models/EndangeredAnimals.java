@@ -4,6 +4,8 @@ import org.bkkimutai.DB.DB;
 import org.bkkimutai.DB.DBManagement;
 import org.sql2o.Connection;
 
+import java.util.List;
+
 public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
     public  String health;
     public String age;
@@ -32,7 +34,7 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
 
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO animals (name, rangerId, health, age, type) VALUES (:name, :health, :age, :type)";
+            String sql = "INSERT INTO animals (name, rangerId, health, age, type) VALUES (:name, :rangerId, :health, :age, :type)";
             con.createQuery(sql)
                     .addParameter("name", this.name)
                     .addParameter("rangerId", this.rangerId)
@@ -47,5 +49,35 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
             System.out.println(exception.getMessage());
         }
     }
+    public static List<EndangeredAnimals> all() {
+        String sql = "SELECT * FROM animals;";
+        try (Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetch(EndangeredAnimals.class);
+        }
+    }
+    public static EndangeredAnimals find(int id) {
+        String sql = "SELECT * FROM animals WHERE id = :id;";
+        try (Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql)
+                    .addParameter("id", id)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetchFirst(EndangeredAnimals.class);
+        }
+    }
 
+    public void update() {
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "UPDATE animals SET name = :name, rangerId= :rangerId, health = :health, age = :age, type= :type WHERE id = :id";
+            con.createQuery(sql)
+                    .addParameter("name", name)
+                    .addParameter("rangerId", this.rangerId)
+                    .addParameter("health", health)
+                    .addParameter("age", age)
+                    .addParameter("type", this.type)
+                    .addParameter("id", id)
+                    .executeUpdate();
+        }
+    }
 }
