@@ -7,7 +7,7 @@ import org.sql2o.Connection;
 import java.util.List;
 
 public class Animals extends AnimalAbstract implements DBManagement {
-    public static final String ANIMAL_TYPE = "Non-endangered";
+    public static final String ANIMAL_TYPE = "non-endangered";
 
     public Animals(String name, int rangerId){
 
@@ -22,21 +22,22 @@ public class Animals extends AnimalAbstract implements DBManagement {
 
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO animals (name, rangerId)" +
-                    "VALUES (:name, :rangerId)";
+            String sql = "INSERT INTO animals (name, rangerId, type)" +
+                    "VALUES (:name, :rangerId, :type)";
             con.createQuery(sql)
                     .addParameter("name", this.name)
                     .addParameter("rangerId", this.rangerId)
+                    .addParameter("type", this.type)
                     .executeUpdate();
             String idQuery = "SELECT lastval()";
-            this.id = con.createQuery(idQuery).executeScalar(Integer.class);
+            this.animalId = con.createQuery(idQuery).executeScalar(Integer.class);
             con.commit();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }
     }
     public static List<Animals> all() {
-        String sql = "SELECT * FROM animals;";
+        String sql = "SELECT * FROM animals WHERE type = 'non-endangered';";
         try (Connection con = DB.sql2o.open()) {
             return con.createQuery(sql)
                     .throwOnMappingFailure(false)
@@ -57,7 +58,7 @@ public class Animals extends AnimalAbstract implements DBManagement {
         try(Connection con = DB.sql2o.open()) {
             con.createQuery(sql)
                     .addParameter("name", name)
-                    .addParameter("id", id)
+                    .addParameter("id", animalId)
                     .throwOnMappingFailure(false)
                     .executeUpdate();
         }

@@ -1,15 +1,11 @@
 package org.bkkimutai.models;
 
-import org.bkkimutai.DB.DB;
-import org.sql2o.Connection;
-
 import java.util.Timer;
 
 public abstract class AnimalAbstract {
     public String name;
     public int rangerId;
-    public int id;
-
+    public int animalId;
     public Timer timer;
     public String type;
 
@@ -29,12 +25,12 @@ public abstract class AnimalAbstract {
         this.rangerId = rangerId;
     }
 
-    public int getId() {
-        return id;
+    public int getAnimalId() {
+        return animalId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAnimalId(int animalId) {
+        this.animalId = animalId;
     }
 
     public Timer getTimer() {
