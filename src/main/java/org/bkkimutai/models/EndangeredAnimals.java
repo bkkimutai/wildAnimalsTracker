@@ -24,6 +24,14 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
 
     }
 
+    public void setHealth(String health) {
+        this.health = health;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
     public String getHealth() {
         return health;
     }
@@ -32,6 +40,8 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
         return age;
     }
 
+
+    @Override
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
             String sql = "INSERT INTO animals (animalName, rangerId, type, health, age) VALUES (:animalName, :rangerId, :type, :health, :age)";

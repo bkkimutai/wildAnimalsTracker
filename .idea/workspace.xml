@@ -7,10 +7,10 @@
     <list default="true" id="245d8ee6-7371-421b-98b0-93c8658fd1c7" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../CaesarCipher/.idea/CaesarCipher.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/AnimalAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/AnimalAbstract.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/Animals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/Animals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/EndangeredAnimals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/EndangeredAnimals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/AnimalsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AnimalsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/EndangeredAnimalsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EndangeredAnimalsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cookie-recipe" beforeDir="false" afterPath="$PROJECT_DIR$/../cookie-recipe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../day0/hello-world.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day0/hello-world.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../weekthree/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../weekthree/README.md" afterDir="false" />
@@ -94,79 +94,7 @@
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Benjamin Kimutai/Documents/moringa_school_projects/WildAnimalTracker/src/main/java/org/bkkimutai/Main.java&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.AnimalsTest.find_returnsItemsWithSameId_secondAnimal">
-    <configuration name="AnimalsTest.all_returnsAllInstancesOfAnimals_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;AnimalsTest.all_returnsAllInstancesOfAnimals_true&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="AnimalsTest.equals_returnsTrueIfNameTypeAreSame_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;AnimalsTest.equals_returnsTrueIfNameTypeAreSame_true&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="AnimalsTest.find_returnsItemsWithSameId_secondAnimal" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;AnimalsTest.find_returnsItemsWithSameId_secondAnimal&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.EndangeredAnimalsTest.save_assignsIdToObject">
     <configuration name="AnimalsTest.save_assignsIdToObject" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -191,7 +119,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="AnimalsTest.save_insertsObjectIntoDatabase_Animal" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EndangeredAnimalsTest.all_returnsAllInstancesOfEndangeredAnimals_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -204,7 +132,79 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;AnimalsTest.save_insertsObjectIntoDatabase_Animal&quot;" />
+            <option value="&quot;EndangeredAnimalsTest.all_returnsAllInstancesOfEndangeredAnimals_true&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="EndangeredAnimalsTest.find_returnsEndangeredAnimalWithSameId_secondAnimal" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;EndangeredAnimalsTest.find_returnsEndangeredAnimalWithSameId_secondAnimal&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="EndangeredAnimalsTest.find_returnsItemsWithSameId_secondAnimal" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;EndangeredAnimalsTest.find_returnsItemsWithSameId_secondAnimal&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="EndangeredAnimalsTest.save_assignsIdToObject" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;EndangeredAnimalsTest.save_assignsIdToObject&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -217,11 +217,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AnimalsTest.find_returnsItemsWithSameId_secondAnimal" />
+        <item itemvalue="Gradle.EndangeredAnimalsTest.save_assignsIdToObject" />
         <item itemvalue="Gradle.AnimalsTest.save_assignsIdToObject" />
-        <item itemvalue="Gradle.AnimalsTest.all_returnsAllInstancesOfAnimals_true" />
-        <item itemvalue="Gradle.AnimalsTest.save_insertsObjectIntoDatabase_Animal" />
-        <item itemvalue="Gradle.AnimalsTest.equals_returnsTrueIfNameTypeAreSame_true" />
+        <item itemvalue="Gradle.EndangeredAnimalsTest.find_returnsEndangeredAnimalWithSameId_secondAnimal" />
+        <item itemvalue="Gradle.EndangeredAnimalsTest.find_returnsItemsWithSameId_secondAnimal" />
+        <item itemvalue="Gradle.EndangeredAnimalsTest.all_returnsAllInstancesOfEndangeredAnimals_true" />
       </list>
     </recent_temporary>
   </component>

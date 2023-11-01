@@ -14,6 +14,7 @@ public class Animals extends AnimalAbstract implements DBManagement {
         this.rangerId = rangerId;
         type = ANIMAL_TYPE;
     }
+    @Override
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
             String sql = "INSERT INTO animals (animalName, rangerId, type)" +

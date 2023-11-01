@@ -55,7 +55,7 @@ public class AnimalsTest {
         assertEquals(1, savedAnimal.get(0).getAnimalId());
     }
     @Test
-    public void find_returnsItemsWithSameId_secondAnimal() {
+    public void find_returnsAnimalsWithSameId_secondAnimal() {
         Animals firstAnimal = new Animals ("Gazel", 1);
         firstAnimal.save();
         Animals secondAnimal = new Animals ("Lion", 2);
