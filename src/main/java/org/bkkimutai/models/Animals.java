@@ -10,14 +10,9 @@ public class Animals extends AnimalAbstract implements DBManagement {
     public static final String ANIMAL_TYPE = "non-endangered";
 
     public Animals(String animalName, int rangerId){
-
-        if (animalName.isEmpty()){
-            throw new IllegalArgumentException("Please enter an animal name.");
-        }
         this.animalName = animalName;
         this.rangerId = rangerId;
         type = ANIMAL_TYPE;
-
     }
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {

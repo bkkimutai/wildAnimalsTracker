@@ -39,16 +39,14 @@ public abstract class AnimalAbstract {
     }
 
     @Override
-    public boolean equals(Object otherAnimal){
+    public boolean equals(Object otherAnimal) {
         if (!(otherAnimal instanceof AnimalAbstract)) {
             return false;
         } else {
             AnimalAbstract newAnimal = (AnimalAbstract) otherAnimal;
             return this.getAnimalName().equals(newAnimal.getAnimalName()) &&
-                    this.getRangerId() == newAnimal.getRangerId();
+                    this.getType().equals(newAnimal.getType());
         }
     }
-
-
 
 }
