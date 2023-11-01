@@ -11,12 +11,12 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
     public String age;
     public static final String ANIMAL_TYPE = "Endangered";
 
-    public EndangeredAnimals(String name, int rangerId,String health, String age){
+    public EndangeredAnimals(String animalName, int rangerId,String health, String age){
 
-        if (name.isEmpty() || health.isEmpty() || age.isEmpty()){
+        if (animalName.isEmpty() || health.isEmpty() || age.isEmpty()){
             throw new IllegalArgumentException("Please enter all input fields.");
         }
-        this.name = name;
+        this.animalName = animalName;
         this.rangerId = rangerId;
         this.health = health;
         this.age = age;
@@ -34,9 +34,9 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
 
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO animals (name, rangerId, type, health, age) VALUES (:name, :rangerId, :type, :health, :age)";
+            String sql = "INSERT INTO animals (animalName, rangerId, type, health, age) VALUES (:animalName, :rangerId, :type, :health, :age)";
             con.createQuery(sql)
-                    .addParameter("name", this.name)
+                    .addParameter("animalName", this.animalName)
                     .addParameter("rangerId", this.rangerId)
                     .addParameter("type", this.type)
                     .addParameter("health", this.health)
@@ -69,14 +69,14 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
 
     public void update() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "UPDATE animals SET name = :name, rangerId= :rangerId, health = :health, age = :age, type= :type WHERE id = :id";
+            String sql = "UPDATE animals SET animalName = :animalName, rangerId= :rangerId, health = :health, age = :age, type= :type WHERE animalId = :animalId";
             con.createQuery(sql)
-                    .addParameter("name", name)
+                    .addParameter("animalName", animalName)
                     .addParameter("rangerId", this.rangerId)
                     .addParameter("health", health)
                     .addParameter("age", age)
                     .addParameter("type", this.type)
-                    .addParameter("id", animalId)
+                    .addParameter("animalId", animalId)
                     .executeUpdate();
         }
     }

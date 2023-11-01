@@ -1,7 +1,8 @@
 SET MODE PostgresSQL;
+CREATE DATABASE IF NOT EXISTS wildlife_tracker;
 
 CREATE TABLE IF NOT EXISTS animals(
-    id int PRIMARY KEY auto_increment,
+    animalId serial PRIMARY KEY,
     name VARCHAR,
     rangerId INT,
     type VARCHAR,
@@ -10,15 +11,16 @@ CREATE TABLE IF NOT EXISTS animals(
 );
 
 CREATE TABLE IF NOT EXISTS sightings (
-   sightingId int PRIMARY KEY auto_increment,
+   sightingId serial PRIMARY KEY,
    animalId int,
    location VARCHAR,
    rangerId VARCHAR,
    Timestamp timestamp
 );
 CREATE TABLE IF NOT EXISTS rangers (
-   rangerId int PRIMARY KEY auto_increment,
+   rangerId serial PRIMARY KEY,
    rangerName VARCHAR,
    email VARCHAR,
    badgeNumber VARCHAR
 );
+CREATE DATABASE IF NOT EXISTS wildlife_tracker_test WITH TEMPLATE wildlife_tracker;

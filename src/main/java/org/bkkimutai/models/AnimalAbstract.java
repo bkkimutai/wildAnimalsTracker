@@ -1,19 +1,17 @@
 package org.bkkimutai.models;
 
-import java.util.Timer;
-
 public abstract class AnimalAbstract {
-    public String name;
+    public String animalName;
     public int rangerId;
     public int animalId;
     public String type;
 
-    public String getName() {
-        return name;
+    public String getAnimalName() {
+        return animalName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setAnimalName(String animalName) {
+        this.animalName = animalName;
     }
 
     public int getRangerId() {
@@ -46,7 +44,7 @@ public abstract class AnimalAbstract {
             return false;
         } else {
             AnimalAbstract newAnimal = (AnimalAbstract) otherAnimal;
-            return this.getName().equals(newAnimal.getName()) &&
+            return this.getAnimalName().equals(newAnimal.getAnimalName()) &&
                     this.getRangerId() == newAnimal.getRangerId();
         }
     }

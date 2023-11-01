@@ -9,22 +9,22 @@ import java.util.List;
 public class Animals extends AnimalAbstract implements DBManagement {
     public static final String ANIMAL_TYPE = "non-endangered";
 
-    public Animals(String name, int rangerId){
+    public Animals(String animalName, int rangerId){
 
-        if (name.isEmpty()){
+        if (animalName.isEmpty()){
             throw new IllegalArgumentException("Please enter an animal name.");
         }
-        this.name = name;
+        this.animalName = animalName;
         this.rangerId = rangerId;
         type = ANIMAL_TYPE;
 
     }
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO animals (name, rangerId, type)" +
-                    "VALUES (:name, :rangerId, :type)";
+            String sql = "INSERT INTO animals (animalName, rangerId, type)" +
+                    "VALUES (:animalName, :rangerId, :type)";
             con.createQuery(sql)
-                    .addParameter("name", this.name)
+                    .addParameter("animalName", this.animalName)
                     .addParameter("rangerId", this.rangerId)
                     .addParameter("type", this.type)
                     .executeUpdate();
@@ -53,11 +53,11 @@ public class Animals extends AnimalAbstract implements DBManagement {
         }
     }
     public void update() {
-        String sql = "UPDATE animals SET name = :name WHERE id = :id";
+        String sql = "UPDATE animals SET animalName = :animalName WHERE animalId = :animalId";
         try(Connection con = DB.sql2o.open()) {
             con.createQuery(sql)
-                    .addParameter("name", name)
-                    .addParameter("id", animalId)
+                    .addParameter("animalName", animalName)
+                    .addParameter("animalId", animalId)
                     .throwOnMappingFailure(false)
                     .executeUpdate();
         }
