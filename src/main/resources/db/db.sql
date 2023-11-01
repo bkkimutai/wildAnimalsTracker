@@ -14,5 +14,11 @@ CREATE TABLE IF NOT EXISTS sightings (
    animalId int,
    location VARCHAR,
    rangerId VARCHAR,
-   Timestamp timestamp;
+   Timestamp timestamp
+);
+CREATE TABLE IF NOT EXISTS rangers (
+   rangerId int PRIMARY KEY auto_increment,
+   rangerName VARCHAR,
+   email VARCHAR,
+   badgeNumber VARCHAR
 );

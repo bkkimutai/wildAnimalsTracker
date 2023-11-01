@@ -34,7 +34,7 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
 
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO animals (name, rangerId, type, health, age, ) VALUES (:name, :rangerId, :type, :health, :age)";
+            String sql = "INSERT INTO animals (name, rangerId, type, health, age) VALUES (:name, :rangerId, :type, :health, :age)";
             con.createQuery(sql)
                     .addParameter("name", this.name)
                     .addParameter("rangerId", this.rangerId)
@@ -57,11 +57,11 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
                     .executeAndFetch(EndangeredAnimals.class);
         }
     }
-    public static EndangeredAnimals find(int id) {
-        String sql = "SELECT * FROM animals WHERE id = :id;";
+    public static EndangeredAnimals find(int animalId) {
+        String sql = "SELECT * FROM animals WHERE animalId = :animalId;";
         try (Connection con = DB.sql2o.open()) {
             return con.createQuery(sql)
-                    .addParameter("id", id)
+                    .addParameter("animalId", animalId)
                     .throwOnMappingFailure(false)
                     .executeAndFetchFirst(EndangeredAnimals.class);
         }

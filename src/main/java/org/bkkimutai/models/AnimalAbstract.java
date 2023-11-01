@@ -6,7 +6,6 @@ public abstract class AnimalAbstract {
     public String name;
     public int rangerId;
     public int animalId;
-    public Timer timer;
     public String type;
 
     public String getName() {
@@ -31,14 +30,6 @@ public abstract class AnimalAbstract {
 
     public void setAnimalId(int animalId) {
         this.animalId = animalId;
-    }
-
-    public Timer getTimer() {
-        return timer;
-    }
-
-    public void setTimer(Timer timer) {
-        this.timer = timer;
     }
 
     public String getType() {

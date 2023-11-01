@@ -19,7 +19,6 @@ public class Animals extends AnimalAbstract implements DBManagement {
         type = ANIMAL_TYPE;
 
     }
-
     public void save() {
         try (Connection con = DB.sql2o.beginTransaction()) {
             String sql = "INSERT INTO animals (name, rangerId, type)" +
@@ -44,11 +43,11 @@ public class Animals extends AnimalAbstract implements DBManagement {
                     .executeAndFetch(Animals.class);
         }
     }
-    public static Animals find(int id) {
-        String sql = "SELECT * FROM animals WHERE id = :id;";
+    public static Animals find(int animalId) {
+        String sql = "SELECT * FROM animals WHERE animalId = :animalId;";
         try (Connection con = DB.sql2o.open()) {
             return con.createQuery(sql)
-                    .addParameter("id", id)
+                    .addParameter("animalId", animalId)
                     .throwOnMappingFailure(false)
                     .executeAndFetchFirst(Animals.class);
         }
