@@ -19,14 +19,12 @@ public class Animals extends AnimalAbstract implements DBManagement {
         try (Connection con = DB.sql2o.beginTransaction()) {
             String sql = "INSERT INTO animals (animalName, rangerId, type)" +
                     "VALUES (:animalName, :rangerId, :type)";
-            con.createQuery(sql)
+            this.animalId = (int) con.createQuery(sql, true)
                     .addParameter("animalName", this.animalName)
                     .addParameter("rangerId", this.rangerId)
                     .addParameter("type", this.type)
-                    .executeUpdate();
-            String idQuery = "SELECT lastval()";
-            this.animalId = con.createQuery(idQuery).executeScalar(Integer.class);
-            con.commit();
+                    .executeUpdate()
+                    .getKey();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }

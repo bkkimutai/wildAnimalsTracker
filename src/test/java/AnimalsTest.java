@@ -49,7 +49,7 @@ public class AnimalsTest {
     }
     @Test
     public void save_assignsIdToObject() {
-        Animals testAnimal = new Animals ("Lion", 2);
+        Animals testAnimal = new Animals ("Lioness", 2);
         testAnimal.save();
         List<Animals> savedAnimal = Animals.all();
         assertEquals(1, savedAnimal.get(0).getAnimalId());

@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS sightings (
    sightingId serial PRIMARY KEY,
    animalId int,
    location VARCHAR,
-   rangerId VARCHAR,
+   rangerId int,
    Timestamp timestamp
 );
 CREATE TABLE IF NOT EXISTS rangers (

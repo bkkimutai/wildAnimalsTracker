@@ -49,10 +49,10 @@ public class EndangeredAnimalsTest {
     }
     @Test
     public void save_assignsIdToObject() {
-        EndangeredAnimals testAnimal = new EndangeredAnimals ("Gazel", 1, "healthy","young");
+        EndangeredAnimals testAnimal = new EndangeredAnimals ("Gazelle", 1, "healthy","young");
         testAnimal.save();
         List<EndangeredAnimals> savedAnimals = EndangeredAnimals.all();
-        assertEquals(1, savedAnimals.get(0).getAnimalId());
+        assertEquals(7, savedAnimals.get(0).getAnimalId());
     }
     @Test
     public void find_returnsEndangeredAnimalWithSameId_secondAnimal() {

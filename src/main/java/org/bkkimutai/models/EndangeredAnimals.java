@@ -12,18 +12,12 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
     public static final String ANIMAL_TYPE = "Endangered";
 
     public EndangeredAnimals(String animalName, int rangerId,String health, String age){
-
-        if (animalName.isEmpty() || health.isEmpty() || age.isEmpty()){
-            throw new IllegalArgumentException("Please enter all input fields.");
-        }
         this.animalName = animalName;
         this.rangerId = rangerId;
         this.health = health;
         this.age = age;
         type = ANIMAL_TYPE;
-
     }
-
     public void setHealth(String health) {
         this.health = health;
     }
@@ -43,18 +37,16 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
 
     @Override
     public void save() {
-        try (Connection con = DB.sql2o.beginTransaction()) {
+        try(Connection con = DB.sql2o.open()) {
             String sql = "INSERT INTO animals (animalName, rangerId, type, health, age) VALUES (:animalName, :rangerId, :type, :health, :age)";
-            con.createQuery(sql)
+            this.animalId = (int) con.createQuery(sql, true)
                     .addParameter("animalName", this.animalName)
                     .addParameter("rangerId", this.rangerId)
                     .addParameter("type", this.type)
                     .addParameter("health", this.health)
                     .addParameter("age", this.age)
-                    .executeUpdate();
-            String idQuery = "SELECT lastval()";
-            this.animalId = con.createQuery(idQuery).executeScalar(Integer.class);
-            con.commit();
+                    .executeUpdate()
+                    .getKey();
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }

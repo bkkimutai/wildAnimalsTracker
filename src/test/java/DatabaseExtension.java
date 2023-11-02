@@ -1,4 +1,3 @@
-import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.AfterEachCallback;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -11,6 +10,7 @@ public class DatabaseExtension implements BeforeEachCallback, AfterEachCallback 
     public DatabaseExtension(Sql2o sql2o) {
         this.sql2o = sql2o;
     }
+
     @Override
     public void beforeEach(ExtensionContext context) {
     }
