@@ -1,5 +1,6 @@
-package org.bkkimutai.models;
+package org.bkkimutai.DAO;
 
+import org.bkkimutai.models.Sightings;
 import org.sql2o.Connection;
 
 import static org.bkkimutai.DB.DB.sql2o;
