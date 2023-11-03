@@ -18,10 +18,10 @@ public class DatabaseExtension implements BeforeEachCallback, AfterEachCallback 
     public void afterEach(ExtensionContext context) {
         try (Connection con = sql2o.open()) {
             String deleteAnimalsQuery = "DELETE FROM animals *;";
-            String deleteInventorySightingsQuery = "DELETE FROM sightings *;";
+            String deleteSightingsQuery = "DELETE FROM sightings *;";
             String deleteRangersQuery = "DELETE FROM rangers *;";
             con.createQuery(deleteAnimalsQuery).executeUpdate();
-            con.createQuery(deleteInventorySightingsQuery).executeUpdate();
+            con.createQuery(deleteSightingsQuery).executeUpdate();
             con.createQuery(deleteRangersQuery).executeUpdate();
         }
     }

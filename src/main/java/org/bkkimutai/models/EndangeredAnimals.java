@@ -51,6 +51,7 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
             System.out.println(exception.getMessage());
         }
     }
+
     public static List<EndangeredAnimals> all() {
         String sql = "SELECT * FROM animals WHERE type = 'Endangered';";
         try (Connection con = DB.sql2o.open()) {

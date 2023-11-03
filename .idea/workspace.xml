@@ -6,15 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="245d8ee6-7371-421b-98b0-93c8658fd1c7" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../CaesarCipher/.idea/CaesarCipher.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/AnimalWithSighting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/Animals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/Animals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/EndangeredAnimals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/EndangeredAnimals.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/Sightings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/Sightings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/AnimalsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/AnimalsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EndangeredAnimalsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EndangeredAnimalsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SightingsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SightingsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cookie-recipe" beforeDir="false" afterPath="$PROJECT_DIR$/../cookie-recipe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../day0/hello-world.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day0/hello-world.html" afterDir="false" />
@@ -99,7 +98,31 @@
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Benjamin Kimutai/Documents/moringa_school_projects/WildAnimalTracker/src/main/java/org/bkkimutai/Main.java&quot;
   }
 }</component>
-  <component name="RunManager" selected="Gradle.SightingsTest.find_returnsSightingsWithSameId_firstSight">
+  <component name="RunManager">
+    <configuration name="EndangeredAnimalsTest.save_assignsIdToObject" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;EndangeredAnimalsTest.save_assignsIdToObject&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="SightingsTest.all_returnsAllInstancesOfEndangeredAnimals_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -114,30 +137,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;SightingsTest.all_returnsAllInstancesOfEndangeredAnimals_true&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="SightingsTest.equals_returnsTrueIfNameTypeAreSame_true" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;SightingsTest.equals_returnsTrueIfNameTypeAreSame_true&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -172,7 +171,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="SightingsTest.getSigtingName_SightingsInstantiatesWithLocation_ZoneA" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="SightingsTest.save_assignsIdToObject" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -185,7 +184,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;SightingsTest.getSigtingName_SightingsInstantiatesWithLocation_ZoneA&quot;" />
+            <option value="&quot;SightingsTest.save_assignsIdToObject&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -222,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SightingsTest.save_assignsIdToObject" />
         <item itemvalue="Gradle.SightingsTest.find_returnsSightingsWithSameId_firstSight" />
         <item itemvalue="Gradle.SightingsTest.all_returnsAllInstancesOfEndangeredAnimals_true" />
         <item itemvalue="Gradle.SightingsTest.save_insertsObjectIntoDatabase_Sighting" />
-        <item itemvalue="Gradle.SightingsTest.equals_returnsTrueIfNameTypeAreSame_true" />
-        <item itemvalue="Gradle.SightingsTest.getSigtingName_SightingsInstantiatesWithLocation_ZoneA" />
+        <item itemvalue="Gradle.EndangeredAnimalsTest.save_assignsIdToObject" />
       </list>
     </recent_temporary>
   </component>
@@ -265,21 +264,30 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/SightingsTest.java</url>
-          <line>50</line>
-          <properties class="SightingsTest" method="save_assignsIdToObject">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/test/java/SightingsTest.java</url>
           <line>34</line>
           <properties class="SightingsTest" method="save_insertsObjectIntoDatabase_Sighting">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/SightingsTest.java</url>
+          <line>57</line>
+          <properties class="SightingsTest" method="find_returnsSightingsWithSameId_firstSight">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/SightingsTest.java</url>
+          <line>50</line>
+          <properties class="SightingsTest" method="save_assignsIdToObject">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

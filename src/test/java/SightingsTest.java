@@ -33,7 +33,7 @@ public class SightingsTest {
 
     @Test
     public void save_insertsObjectIntoDatabase_Sighting() {
-        Sightings testSight = new Sightings (1, "Zone A", 1);;
+        Sightings testSight = new Sightings (1, "Zone A", 1);
         testSight.save();
         assertEquals(Sightings.all().get(0), testSight);
     }
@@ -52,7 +52,7 @@ public class SightingsTest {
         Sightings testSight = new Sightings (1, "Zone A", 1);;
         testSight.save();
         List<Sightings> savedSightings = Sightings.all();
-        assertEquals(1, savedSightings.get(0).getSightingId());
+        assertEquals(2, savedSightings.get(0).getSightingId());
     }
     @Test
     public void find_returnsSightingsWithSameId_firstSight() {

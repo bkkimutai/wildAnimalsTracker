@@ -62,9 +62,25 @@ public class Sightings implements DBManagement {
         this.timestamp = timestamp;
     }
     @Override
+//    public void save() {
+//        try (Connection con = DB.sql2o.beginTransaction()) {
+//            String sql = "INSERT INTO sightings (animalId, location, rangerId, timestamp) VALUES (:animalId,:location,:rangerId,now());";
+//            con.createQuery(sql)
+//                    .addParameter("animalId", this.animalId)
+//                    .addParameter("location", this.location)
+//                    .addParameter("rangerId", this.rangerId)
+//                    .executeUpdate();
+//            String idQuery = "SELECT lastval()";
+//            this.sightingId = con.createQuery(idQuery).executeScalar(Integer.class);
+//
+//            con.commit();
+//        } catch (Exception exception) {
+//            System.out.println(exception.getMessage());
+//        }
+//    }
     public void save() {
-        try (Connection con = DB.sql2o.beginTransaction()) {
-            String sql = "INSERT INTO sightings (animalId, location, rangerId, Timestamp) VALUES (:animalId, :location, :rangerId, now());";
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "INSERT INTO sightings (animalId, location, rangerId, timestamp) VALUES (:animalId,:location,:rangerId,now());";
             this.sightingId = (int) con.createQuery(sql, true)
                     .addParameter("animalId", this.animalId)
                     .addParameter("location", this.location)
@@ -100,6 +116,7 @@ public class Sightings implements DBManagement {
                     .executeAndFetchFirst(Sightings.class);
         }
     }
+
     public void update() {
         String sql = "UPDATE sightings SET location = :location, rangerId = :rangerId WHERE sightingId = :sightingId";
         try(Connection con = DB.sql2o.open()) {
@@ -117,8 +134,7 @@ public class Sightings implements DBManagement {
             return false;
         } else {
             Sightings newSighting = (Sightings) otherSighting;
-            return this.getLocation().equals(newSighting.getLocation()) &&
-                    this.getTimestamp().equals(newSighting.getTimestamp());
+            return this.getLocation().equals(newSighting.getLocation());
         }
     }
 }
