@@ -5,20 +5,19 @@ import org.bkkimutai.DB.DBManagement;
 import org.sql2o.Connection;
 
 import java.sql.Timestamp;
-import java.time.LocalTime;
 import java.util.List;
 
 
 public class Sightings implements DBManagement {
     private int sightingId;
     private int animalId;
-    private String location;
+    private int locationId;
     private int rangerId;
     private Timestamp timestamp;
 
-    public Sightings(int animalId, String location, int rangerId){
+    public Sightings(int animalId, int locationId, int rangerId){
         this.animalId = animalId;
-        this.location = location;
+        this.locationId = locationId;
         this.rangerId = rangerId;
     }
 
@@ -38,12 +37,12 @@ public class Sightings implements DBManagement {
         this.animalId = animalId;
     }
 
-    public String getLocation() {
-        return location;
+    public int getLocationId() {
+        return locationId;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
     }
 
     public int getRangerId() {
@@ -80,10 +79,10 @@ public class Sightings implements DBManagement {
 //    }
     public void save() {
         try(Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO sightings (animalId, location, rangerId, timestamp) VALUES (:animalId,:location,:rangerId,now());";
+            String sql = "INSERT INTO sightings (animalId, locationId, rangerId, timestamp) VALUES (:animalId,:locationId,:rangerId,now());";
             this.sightingId = (int) con.createQuery(sql, true)
                     .addParameter("animalId", this.animalId)
-                    .addParameter("location", this.location)
+                    .addParameter("locationId", this.locationId)
                     .addParameter("rangerId", this.rangerId)
                     .executeUpdate()
                     .getKey();
@@ -118,23 +117,14 @@ public class Sightings implements DBManagement {
     }
 
     public void update() {
-        String sql = "UPDATE sightings SET location = :location, rangerId = :rangerId WHERE sightingId = :sightingId";
+        String sql = "UPDATE sightings SET locationId = :locationId, rangerId = :rangerId WHERE sightingId = :sightingId";
         try(Connection con = DB.sql2o.open()) {
             con.createQuery(sql)
-                    .addParameter("location", location)
+                    .addParameter("location", locationId)
                     .addParameter("rangerId", rangerId)
                     .addParameter("sightingId", sightingId)
                     .throwOnMappingFailure(false)
                     .executeUpdate();
-        }
-    }
-    @Override
-    public boolean equals(Object otherSighting) {
-        if (!(otherSighting instanceof Sightings)) {
-            return false;
-        } else {
-            Sightings newSighting = (Sightings) otherSighting;
-            return this.getLocation().equals(newSighting.getLocation());
         }
     }
 }

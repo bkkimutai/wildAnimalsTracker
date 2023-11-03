@@ -6,14 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="245d8ee6-7371-421b-98b0-93c8658fd1c7" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../CaesarCipher/.idea/CaesarCipher.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/AnimalWithSighting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/Location.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/EndangeredAnimals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/EndangeredAnimals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/AnimalWithSighting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/AnimalWithSighting.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/Sightings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/bkkimutai/models/Sightings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/DatabaseExtension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SightingsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SightingsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cookie-recipe" beforeDir="false" afterPath="$PROJECT_DIR$/../cookie-recipe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../day0/hello-world.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day0/hello-world.html" afterDir="false" />
@@ -248,14 +248,9 @@
           <line>17</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/bkkimutai/models/Sightings.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/SightingsTest.java</url>
-          <line>22</line>
+          <line>19</line>
           <properties class="SightingsTest" method="getSigtingName_SightingsInstantiatesWithLocation_ZoneA">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -264,7 +259,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/SightingsTest.java</url>
-          <line>34</line>
+          <line>31</line>
           <properties class="SightingsTest" method="save_insertsObjectIntoDatabase_Sighting">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -273,7 +268,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/SightingsTest.java</url>
-          <line>57</line>
+          <line>54</line>
           <properties class="SightingsTest" method="find_returnsSightingsWithSameId_firstSight">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -282,7 +277,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/SightingsTest.java</url>
-          <line>50</line>
+          <line>47</line>
           <properties class="SightingsTest" method="save_assignsIdToObject">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />

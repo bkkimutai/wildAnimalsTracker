@@ -8,15 +8,42 @@ import static org.bkkimutai.DB.DB.sql2o;
 
 public class AnimalWithSighting {
     private int animalId;
-    private String AnimalName;
+    private String animalName;
+    private int locationId;
+    private String locationName;
     private int sightingId;
-    private String location;
+    private int rangerId;
+    private String rangerName;
 
-    public AnimalWithSighting(int animalId,String AnimalName,int sightingId,String location){
-        this.animalId = animalId;
-        this.AnimalName = AnimalName;
+//    public AnimalWithSighting(int animalId,String AnimalName,int sightingId,String locationName){
+//        this.animalId = animalId;
+//        this.AnimalName = AnimalName;
+//        this.sightingId = sightingId;
+//        this.locationName = locationName;
+//    }
+
+    public static List<AnimalWithSighting> getAllAnimalsWithSightings() {
+        try (Connection connection = sql2o.open()) {
+            return connection.createQuery(
+                            "SELECT a.animalId, a.animalName, s.locationId, l.locationName, s.sightingId, s.rangerId, r.rangerName " +
+                                    "FROM animals a " +
+                                    "INNER JOIN sightings s ON a.animalId = s.animalId " +
+                                    "INNER JOIN locations l ON s.locationId = l.locationId " +
+                                    "INNER JOIN rangers r ON s.rangerId = r.rangerId;")
+                    .executeAndFetch(AnimalWithSighting.class);
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            return null;
+        }
+    }
+
+
+    public int getSightingId() {
+        return sightingId;
+    }
+
+    public void setSightingId(int sightingId) {
         this.sightingId = sightingId;
-        this.location = location;
     }
 
     public int getAnimalId() {
@@ -28,39 +55,42 @@ public class AnimalWithSighting {
     }
 
     public String getAnimalName() {
-        return AnimalName;
+        return animalName;
     }
 
     public void setAnimalName(String animalName) {
-        AnimalName = animalName;
+        this.animalName = animalName;
     }
 
-    public int getSightingId() {
-        return sightingId;
+    public int getLocationId() {
+        return locationId;
     }
 
-    public void setSightingId(int sightingId) {
-        this.sightingId = sightingId;
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
     }
 
-    public String getLocation() {
-        return location;
+    public String getLocationName() {
+        return locationName;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
-    public static List<AnimalWithSighting> getAllIAnimalsWithsightings() {
-        try (Connection connection = sql2o.open()) {
-            return connection.createQuery(
-                            "SELECT a.animalId, a.animalName, s.location " + // Add a space after 's.location'
-                                    "FROM animals a " +
-                                    "INNER JOIN sightings s ON a.animalId = s.animalId;")
-                    .executeAndFetch(AnimalWithSighting.class);
-        } catch (Exception exception) {
-            System.out.println(exception.getMessage());
-            return null;
-        }
+    public void setLocationName(String locationName) {
+        this.locationName = locationName;
     }
 
+    public int getRangerId() {
+        return rangerId;
+    }
+
+    public void setRangerId(int rangerId) {
+        this.rangerId = rangerId;
+    }
+
+    public String getRangerName() {
+        return rangerName;
+    }
+
+    public void setRangerName(String rangerName) {
+        this.rangerName = rangerName;
+    }
 }

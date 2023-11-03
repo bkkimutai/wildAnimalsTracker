@@ -17,7 +17,7 @@ public class App {
 
         get("/", (req, res) -> {
             Map<String, Object> payload = new HashMap<>();
-            List<AnimalWithSighting> AnimalWithLocation= AnimalWithSighting.getAllIAnimalsWithsightings();
+            List<AnimalWithSighting> AnimalWithLocation= AnimalWithSighting.getAllAnimalsWithSightings();
             payload.put("AnimalWithLocation", AnimalWithLocation);
             return new ModelAndView(payload, "index.hbs");
         }, new HandlebarsTemplateEngine());

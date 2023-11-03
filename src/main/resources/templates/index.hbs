@@ -4,7 +4,7 @@
     <div class="container text-center">
         {{#if AnimalWithLocation}}
             <h1>Animals Registry!</h1>
-            <p><a class="btn btn-outline-primary" href="/heros/new">+ Add New Sighting</a></p>
+            <p><a class="btn btn-outline-primary" href="/sighting/new">+ Add New Sighting</a></p>
 
             <div class="container text-start mx-auto">
                 <div class="row">
@@ -13,8 +13,9 @@
                             <div class="card mb-3">
                                 <div class="card-body">
                                     <h5 class="card-title">{{animalName}}</h5>
-                                    <p class="card-text"><a href="/squads/{{sightingId}}">Animal Sighting: {{location}}</a></p>
-                                    <a href="sightings/{{sightingId}}/animals/{{animalId}}" class="btn btn-primary"> Checkout on {{animalName}}</a>
+                                    <p class="card-text">Animal Sighting: <a href="/sighting/{{sightingId}}">{{locationName}}</a></p>
+                                    <p class="card-text">Sighted by: <a href="/ranger/{{rangerId}}">{{rangerName}}</a></p>
+                                    <a href="sighting/{{sightingId}}/animals/{{animalId}}" class="btn btn-primary"> Checkout on {{animalName}}</a>
                                 </div>
                             </div>
                         </div>
@@ -23,7 +24,7 @@
             </div>
         {{else}}
             <div class="container text-center border border-primary mt-5">
-                <p><a class="btn btn-outline-primary" href="/heros/new">Add A New Animals <i class="fa fa-mask"></i></a></p>
+                <p><a class="btn btn-outline-primary" href="/animals/new">Add A New Animals <i class="fa fa-mask"></i></a></p>
             </div>
         {{/if}}
     </div>
