@@ -1,5 +1,10 @@
 package org.bkkimutai.models;
 
+import org.bkkimutai.DB.DB;
+import org.sql2o.Connection;
+
+import java.util.List;
+
 public abstract class AnimalAbstract {
     public String animalName;
     public int rangerId;

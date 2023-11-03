@@ -3,7 +3,7 @@ CREATE DATABASE IF NOT EXISTS wildlife_tracker;
 
 CREATE TABLE IF NOT EXISTS animals(
     animalId serial PRIMARY KEY,
-    name VARCHAR,
+    animalName VARCHAR,
     rangerId INT,
     type VARCHAR,
     health VARCHAR,

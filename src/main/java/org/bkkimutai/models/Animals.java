@@ -30,7 +30,7 @@ public class Animals extends AnimalAbstract implements DBManagement {
         }
     }
     public static List<Animals> all() {
-        String sql = "SELECT * FROM animals WHERE type = 'non-endangered';";
+        String sql = "SELECT * FROM animals;";
         try (Connection con = DB.sql2o.open()) {
             return con.createQuery(sql)
                     .throwOnMappingFailure(false)

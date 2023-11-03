@@ -4,6 +4,8 @@ import org.bkkimutai.DB.DB;
 import org.bkkimutai.DB.DBManagement;
 import org.sql2o.Connection;
 
+import java.util.List;
+
 public class Location implements DBManagement {
     String locationName;
     int locationId;
@@ -38,6 +40,14 @@ public class Location implements DBManagement {
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
 
+        }
+    }
+    public static List<Location> all() {
+        String sql = "SELECT * FROM locations;";
+        try (Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetch(Location.class);
         }
     }
 }

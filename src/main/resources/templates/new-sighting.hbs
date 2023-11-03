@@ -1,0 +1,40 @@
+{{#partial "content"}}
+
+    <div class="container mx-auto" style="max-width: 600px;">
+        <h1 class="text-center">Add a new Sighting.</h1>
+
+        <form action="/Sightings" method="post">
+            <div class="form-group">
+                <label for="animalName" >Spotted Animal:</label>
+                <select id="animalId" name="animalId"  required>
+                    {{#each allAnimals}}
+                        <option value="{{animalId}}">{{animalName}}</option>
+                    {{/each}}
+                </select>
+                <p>Animal missing on the dropdown? No worries,<a href="/animals/new">register New Animals here </a></p>
+            </div>
+
+            <div class="form-group">
+                <label for="animalName" >Location:</label>
+                <select id="locationId" name="locationId"  required>
+                    {{#each locations}}
+                        <option value="{{locationId}}">{{locationName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="animalName" >Ranger:</label>
+                <select id="rangerId" name="rangerId"  required>
+                    {{#each allRangers}}
+                        <option value="{{rangerId}}">{{rangerName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <button class="btn btn-primary" type="submit">Save Sighting</button>
+        </form>
+    </div>
+
+{{/partial}}
+{{> "layout.hbs"}}
