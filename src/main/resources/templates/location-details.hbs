@@ -1,0 +1,15 @@
+{{#partial "content"}}
+    <div class="container text-start mx-auto" style="max-width: 500px;">
+            <h2>Animals sighted at {{location.locationName}}</h2>
+            <div class="location">
+            {{#each locations}}
+                <ul>
+                    <h4><li>{{animalName}}</li></h4>
+                </ul>
+            {{/each}}
+            </div>
+    </div>
+{{/partial}}
+
+{{> "layout.hbs"}}
+

@@ -50,4 +50,13 @@ public class Location implements DBManagement {
                     .executeAndFetch(Location.class);
         }
     }
+    public static Location find(int locationId) {
+        String sql = "SELECT * FROM locations WHERE locationId = :locationId;";
+        try (Connection con = DB.sql2o.open()) {
+            return con.createQuery(sql)
+                    .addParameter("locationId", locationId)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetchFirst(Location.class);
+        }
+    }
 }

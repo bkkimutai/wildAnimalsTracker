@@ -11,7 +11,7 @@ public class EndangeredAnimals extends AnimalAbstract implements DBManagement {
     public String age;
     public static final String ANIMAL_TYPE = "Endangered";
 
-    public EndangeredAnimals(String animalName, int rangerId,String health, String age){
+    public EndangeredAnimals(String animalName, int rangerId,String health,String age){
         this.animalName = animalName;
         this.rangerId = rangerId;
         this.health = health;

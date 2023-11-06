@@ -1,0 +1,23 @@
+{{#partial "content"}}
+
+    <div class="container text-start mx-auto">
+
+        <div class="card mb-3 mx-auto" style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">{{animal.animalName}}'s P1 Info</h5>
+                        <p class="card-text">
+                        <p>Sightings: <a href="/sightings/{{sighting.sightingId}}">{{sighting.locationName}}</a> </p>
+                        <p>Age: {{animal.age}}</p>
+                        <p>Health: {{animal.health}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{{/partial}}
+
+{{> "layout.hbs"}}

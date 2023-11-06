@@ -1,0 +1,57 @@
+{{#partial "content"}}
+    <h2 class="text-center">Register A New Animal</h2>
+
+    <div class="container">
+        <form action="/animals" method="post">
+            <div class="form-group">
+                <label for="rangerName">Ranger:</label>
+                <select id="rangerId" name="rangerId" required>
+                    <option value="">Select Ranger</option>
+                    {{#each allRangers}}
+                        <option value="{{rangerId}}">{{rangerName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="animalName">Animal Name:</label>
+                <input type="text" class="form-control" id="animalName" aria-describedby="emailHelp" placeholder="Enter animal name" name="animalName" required>
+            </div>
+
+<!--            <div class="form-group">-->
+<!--                <label for="type">Animal Type:</label>-->
+<!--                <select id="type" name="type" required>-->
+<!--                    <option value="">Select Type</option>-->
+<!--                    <option value="Endangered">Endangered</option>-->
+<!--                    <option value="Non-Endangered">Non-Endangered</option>-->
+<!--                </select>-->
+<!--            </div>-->
+
+                <div class="form-group">
+                    <label for="age">Animal Age:</label>
+                    <select id="age" name="age">
+                        <option value="">Select Age</option>
+                        <option value="newborn">Newborn</option>
+                        <option value="young">Young</option>
+                        <option value="adult">Adult</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="health">Animal Health:</label>
+                    <select id="health" name="health" >
+                        <option value="">Select Health</option>
+                        <option value="Healthy">Healthy</option>
+                        <option value="Okay">Okay</option>
+                        <option value="Ill">Ill</option>
+                    </select>
+                </div>
+
+            <p class="text-end">
+                <button class="btn btn-primary text-end" type="submit">Register Animal <i class="fa fa-save"></i></button>
+            </p>
+        </form>
+    </div>
+
+{{/partial}}
+{{> "layout.hbs"}}

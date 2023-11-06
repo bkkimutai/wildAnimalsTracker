@@ -15,12 +15,6 @@ public class AnimalWithSighting {
     private int rangerId;
     private String rangerName;
 
-//    public AnimalWithSighting(int animalId,String AnimalName,int sightingId,String locationName){
-//        this.animalId = animalId;
-//        this.AnimalName = AnimalName;
-//        this.sightingId = sightingId;
-//        this.locationName = locationName;
-//    }
 
     public static List<AnimalWithSighting> getAllAnimalsWithSightings() {
         try (Connection connection = sql2o.open()) {
