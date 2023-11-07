@@ -1,13 +1,9 @@
 package org.bkkimutai;
-
-import com.github.jknack.handlebars.Handlebars;
 import org.bkkimutai.DAO.SightingDao;
 import org.bkkimutai.models.*;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -17,13 +13,6 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
-//        get("/", (req, res) -> {
-//            Map<String, Object> payload = new HashMap<>();
-//            List<AnimalWithSighting> AnimalWithLocation= AnimalWithSighting.getAllAnimalsWithSightings();
-//            payload.put("AnimalWithLocation", AnimalWithLocation);
-//            return new ModelAndView(payload, "index.hbs");
-//        }, new HandlebarsTemplateEngine());
-
         get("/", (req, res) -> {
             Map<String, Object> payload = new HashMap<>();
             List<EndangeredAnimals> allAnimals= EndangeredAnimals.all();
@@ -71,8 +60,6 @@ public class App {
             Map<String, Object> payload = new HashMap<>();
             int rangerId = Integer.parseInt(request.queryParams("rangerId"));
             String animalName = request.queryParams("animalName");
-            String age = request.queryParams("age");
-            String health = request.queryParams("health");
             Animals newAnimal = new Animals(animalName,rangerId);
             SightingDao.addAnimal(newAnimal);
             response.redirect("/");
@@ -106,7 +93,6 @@ public class App {
             int animalId = Integer.parseInt(request.params("animalId"));
             EndangeredAnimals foundAnimal = EndangeredAnimals.find(animalId);
             model.put("animal", foundAnimal);
-//            int sightingId = Integer.parseInt(request.params("sightingId"));
             List<SightingWithLocation> foundSighting = SightingWithLocation.findSightingWithLocation(animalId);
             model1.put("sighting", foundSighting);
             model.putAll(model1);
