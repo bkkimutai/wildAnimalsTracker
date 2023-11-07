@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="245d8ee6-7371-421b-98b0-93c8658fd1c7" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/../CaesarCipher/.idea/CaesarCipher.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/new-sighting.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/new-sighting.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/db/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/db/db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../cookie-recipe" beforeDir="false" afterPath="$PROJECT_DIR$/../cookie-recipe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../day0/hello-world.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day0/hello-world.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../weekthree/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../weekthree/README.md" afterDir="false" />
@@ -69,6 +71,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6

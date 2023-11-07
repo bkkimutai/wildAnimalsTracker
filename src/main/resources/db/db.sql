@@ -15,17 +15,14 @@ CREATE TABLE IF NOT EXISTS sightings (
    animalId int,
    locationId int,
    rangerId int,
-   Timestamp timestamp
-);
+   Timestamp timestamp);
 CREATE TABLE IF NOT EXISTS rangers (
    rangerId serial PRIMARY KEY,
    rangerName VARCHAR,
    email VARCHAR,
-   badgeNumber VARCHAR
-);
-);
+   badgeNumber VARCHAR);
+
 CREATE TABLE IF NOT EXISTS locations (
    locationId serial PRIMARY KEY,
-   locationName VARCHAR
-);
+   locationName VARCHAR);
 CREATE DATABASE IF NOT EXISTS wildlife_tracker_test WITH TEMPLATE wildlife_tracker;
