@@ -12,7 +12,7 @@ public class SightingDao {
 
     public static void addSightings(Sightings newSightings) {
         try (Connection connection = sql2o.open()) {
-            connection.createQuery("INSERT INTO sightings (animalId, locationId, rangerId, timestamp) VALUES (:animalId,:locationId,:rangerId,now());")
+            connection.createQuery("INSERT INTO sightings (animalId, locationId, rangerId, timestamp) VALUES (:animalId,:locationId,:rangerId,DATE_TRUNC('minute', NOW()));")
                     .addParameter("animalId", newSightings.getAnimalId())
                     .addParameter("locationId", newSightings.getLocationId())
                     .addParameter("rangerId", newSightings.getRangerId())

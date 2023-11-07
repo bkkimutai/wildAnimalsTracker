@@ -8,9 +8,12 @@
                     <div class="card-body">
                         <h5 class="card-title">{{animal.animalName}}'s P1 Info</h5>
                         <p class="card-text">
-                        <p>Sightings: <a href="/location/{{sighting.locationId}}">{{sighting.locationName}}</a> </p>
-                        <p>Age: {{animal.age}}</p>
-                        <p>Health: {{animal.health}}</p>
+                        <p>Sightings:</p>
+                        <ul>
+                        {{#each sighting}}
+                            <li> <a href="/location/{{locationId}}">{{locationName}}</a> at {{timestamp}} by <a href="/ranger/{{rangerId}}">{{rangerName}}</a></li>
+                        {{/each}}
+                        </ul>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,15 @@
+{{#partial "content"}}
+    <div class="container text-start mx-auto" style="max-width: 500px;">
+        <h2>Animals sighted by {{ranger.rangerName}}</h2>
+        <div class="location">
+            {{#each rangers}}
+                <ul>
+                    <h4><li><a href="/animals/{{animalId}}">{{animalName}}</a> spotted at <a href="/location/{{locationId}}">{{locationName}}</a> on {{timestamp}}</li></h4>
+                </ul>
+            {{/each}}
+        </div>
+    </div>
+{{/partial}}
+
+{{> "layout.hbs"}}
+

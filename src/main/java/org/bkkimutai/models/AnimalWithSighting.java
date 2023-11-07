@@ -2,6 +2,9 @@ package org.bkkimutai.models;
 
 import org.sql2o.Connection;
 
+
+import java.sql.Timestamp;
+import java.sql.Timestamp;
 import java.util.List;
 
 import static org.bkkimutai.DB.DB.sql2o;
@@ -14,14 +17,15 @@ public class AnimalWithSighting {
     private int sightingId;
     private int rangerId;
     private String rangerName;
+    private Timestamp timestamp;
 
 
     public static List<AnimalWithSighting> getAllAnimalsWithSightings() {
         try (Connection connection = sql2o.open()) {
             return connection.createQuery(
-                            "SELECT a.animalId, a.animalName, s.locationId, l.locationName, s.sightingId, s.rangerId, r.rangerName " +
-                                    "FROM animals a " +
-                                    "INNER JOIN sightings s ON a.animalId = s.animalId " +
+                            "SELECT a.animalId, a.animalName, s.locationId, l.locationName, s.sightingId, s.rangerId, r.rangerName, s.timestamp " +
+                                    "FROM sightings s " +
+                                    "INNER JOIN animals a ON s.animalId = a.animalId " +
                                     "INNER JOIN locations l ON s.locationId = l.locationId " +
                                     "INNER JOIN rangers r ON s.rangerId = r.rangerId;")
                     .executeAndFetch(AnimalWithSighting.class);
@@ -87,4 +91,13 @@ public class AnimalWithSighting {
     public void setRangerName(String rangerName) {
         this.rangerName = rangerName;
     }
+
+    public Timestamp getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Timestamp timestamp) {
+        this.timestamp = timestamp;
+    }
+
 }

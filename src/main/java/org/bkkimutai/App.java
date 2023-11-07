@@ -1,10 +1,13 @@
 package org.bkkimutai;
 
+import com.github.jknack.handlebars.Handlebars;
 import org.bkkimutai.DAO.SightingDao;
 import org.bkkimutai.models.*;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -14,11 +17,17 @@ import static spark.Spark.*;
 public class App {
     public static void main(String[] args) {
         staticFileLocation("/public");
+//        get("/", (req, res) -> {
+//            Map<String, Object> payload = new HashMap<>();
+//            List<AnimalWithSighting> AnimalWithLocation= AnimalWithSighting.getAllAnimalsWithSightings();
+//            payload.put("AnimalWithLocation", AnimalWithLocation);
+//            return new ModelAndView(payload, "index.hbs");
+//        }, new HandlebarsTemplateEngine());
 
         get("/", (req, res) -> {
             Map<String, Object> payload = new HashMap<>();
-            List<AnimalWithSighting> AnimalWithLocation= AnimalWithSighting.getAllAnimalsWithSightings();
-            payload.put("AnimalWithLocation", AnimalWithLocation);
+            List<EndangeredAnimals> allAnimals= EndangeredAnimals.all();
+            payload.put("AnimalWithLocation", allAnimals);
             return new ModelAndView(payload, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
@@ -91,14 +100,14 @@ public class App {
         }, new HandlebarsTemplateEngine());
 
         //display a single Animal from a Sighting
-        get("/sighting/:sightingId/animals/:animalId", (request, response) -> {
+        get("/animals/:animalId", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             Map<String, Object> model1 = new HashMap<>();
             int animalId = Integer.parseInt(request.params("animalId"));
             EndangeredAnimals foundAnimal = EndangeredAnimals.find(animalId);
             model.put("animal", foundAnimal);
-            int sightingId = Integer.parseInt(request.params("sightingId"));
-            SightingWithLocation foundSighting = SightingWithLocation.findSightingWithLocation(sightingId);
+//            int sightingId = Integer.parseInt(request.params("sightingId"));
+            List<SightingWithLocation> foundSighting = SightingWithLocation.findSightingWithLocation(animalId);
             model1.put("sighting", foundSighting);
             model.putAll(model1);
             return new ModelAndView(model, "animal-details.hbs");
@@ -114,6 +123,18 @@ public class App {
             model1.put("location", newLocation);
             model.putAll(model1);
             return new ModelAndView(model, "location-details.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/ranger/:rangerId", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            Map<String, Object> model1 = new HashMap<>();
+            int rangerToFindId = Integer.parseInt(request.params("rangerId"));
+            List<SightingWithLocation> foundRanger = SightingWithLocation.findSightingWithRanger(rangerToFindId);
+            model.put("rangers", foundRanger);
+            Ranger newRanger = Ranger.find(rangerToFindId);
+            model1.put("ranger", newRanger);
+            model.putAll(model1);
+            return new ModelAndView(model, "ranger-details.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }

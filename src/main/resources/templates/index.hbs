@@ -12,10 +12,12 @@
                         <div class="col-md-4">
                             <div class="card mb-3">
                                 <div class="card-body">
-                                    <h5 class="card-title"><strong>{{animalName}}</strong></h5>
-                                    <p class="card-text">Animal Sighting: <a href="/location/{{locationId}}">{{locationName}}</a></p>
-                                    <p class="card-text">Sighted by: <a href="/ranger/{{rangerId}}">{{rangerName}}</a></p>
-                                    <a href="sighting/{{sightingId}}/animals/{{animalId}}" class="btn btn-primary"> Checkout {{animalName}}</a>
+                                    <h5 class="card-title"><strong><a href="/animals/{{animalId}}" class="btn btn-primary" style="width: 100%;">{{animalName}} > Click to check Sightings</a></strong></h5>
+                                    <p class="card-text">Animal Type: {{type}}</p>
+                                    <p class="card-text">Health: {{health}}</p>
+                                    <p class="card-text">Age: {{age}}</p>
+
+<!--                                    <a href="sighting/{{sightingId}}/animals/{{animalId}}" class="btn btn-primary"> Checkout {{animalName}}</a>-->
                                 </div>
                             </div>
                         </div>
